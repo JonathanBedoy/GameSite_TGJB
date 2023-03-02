@@ -1,0 +1,13 @@
+<div>
+
+  <button type="button" class="btn bg-primary btn-outline-primary" *ngIf="handChoice == 'fist'" (click)="choose('fist')">
+    &#9994;
+  </button>
+
+  <button type="button" class="btn bg-primary btn-outline-primary" *ngIf="handChoice == 'paper'" (click)="choose('paper')">
+    &#9995;
+  </button>
+  <button type="button" class="btn bg-primary btn-outline-primary" *ngIf="handChoice == 'scissors'" (click)="choose('scissors')">
+    &#9996;
+  </button>
+</div>
