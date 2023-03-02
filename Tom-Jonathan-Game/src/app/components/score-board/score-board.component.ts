@@ -13,11 +13,20 @@ export class ScoreBoardComponent implements OnInit {
   result: string = ''
   roundsWon:number = 0
   roundsLost:number = 0
+  thinking:boolean = false
 
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  startRound(decision: string):void {
+    if (this.thinking) return;
+    this.thinking = true
+    setTimeout(() => {
+      this.chose(decision)
+    }, 3000)
   }
 
   chose(decision: string): void {
@@ -59,6 +68,8 @@ export class ScoreBoardComponent implements OnInit {
     if (this.result == 'Won') this.roundsWon++
     else if (this.result == 'Lost') this.roundsLost++
     console.log(this.result)
+    this.thinking = false
+
   }
 
   clear():void {
