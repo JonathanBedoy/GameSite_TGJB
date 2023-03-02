@@ -22,6 +22,12 @@
         <h5 class="card-title text-center mb-4" >Round: {{round}}</h5>
         <div class="row" *ngIf="result !== ''">
           <h6>Result: You {{result}}!</h6>
+              <audio autoplay *ngIf="result == 'Won'">
+                <source src="/assets/applause.wav" type="audio/wav">
+              </audio>
+              <audio autoplay *ngIf="result == 'Lost'">
+                <source src="/assets/youlost.mp3" type="audio/mp3">
+              </audio>
         </div>
 
       </div>
